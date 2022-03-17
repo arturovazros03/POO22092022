@@ -1,6 +1,8 @@
 package conceptosbasicos;
 
+import ico.fes.Alumno;
 import ico.fes.Automovil;
+import ico.fes.Persona;
 import ico.fes.silla;
 import java.awt.Color;
 
@@ -31,8 +33,20 @@ public class ConceptosBasicos {
         Automovil miMustan = new Automovil("Ford", "Mustang", 2010, Color.yellow);
         System.out.println(miMustan);
         
-        Automovil miAkura = new Automovil("Akura", "NSX", 2017, Color.GRAY);
+        Automovil miAkura = new Automovil("Akura", "NSX", 2013, Color.GRAY);
         System.out.println(miAkura);
+        
+        Persona per1 = new Persona();
+        //per1.edad=20000; no se permite por seguirdad del encapsulamiento
+        per1.setEdad(22);//se ejecuta si la edad cumple con las condiciones
+        System.out.println(per1);
+        
+        Alumno al = new Alumno();
+        //atributo de la superclase Persona herdando a subclase Alumno
+        al.setNombre("Luis");
+        al.setNumCuenta("402356511");
+        System.out.println(al);
+        
     }
     
 }

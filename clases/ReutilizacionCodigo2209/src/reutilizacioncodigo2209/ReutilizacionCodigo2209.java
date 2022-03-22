@@ -9,8 +9,11 @@ import ICO.fes.componentes.Mouse;
 import ICO.fes.componentes.Teclado;
 import ICO.fes.componentes.procesador;
 import ICO.fes.herencia.Alumno;
+import ICO.fes.herencia.Servidor;
+import ICO.fes.herencia.polimorfismo.Animal;
+import ICO.fes.herencia.polimorfismo.Perro;
 import asus.com.Computadora;
-import javax.swing.JFrame;
+import javax.swing.JFrame;//interfaz grarfica
 
 /**
  *
@@ -42,37 +45,49 @@ public class ReutilizacionCodigo2209 {
         miCompu.setMarca("Asus");
         miCompu.setCpu(new procesador("Intel",2.6f));
         System.out.println(miCompu);
-        //llamamos al atributo cpu y su marca 
-        miCompu.getCpu().setMarca("AMD");
-        System.out.println(miCompu);
-        //ejercicio -> establecer un mouse marca Logitech del tipo optico
-        miCompu.setRaton(new Mouse("Logitech","Optico"));
-        System.out.println(miCompu);
         
-        //creando nuevo obj -> composicion
-        Computadora compu2 = new Computadora("Apple", "MacBoock", 
-                new Monitor("Toshiba", 14.3f), 
-                new Mouse("Acteck", "Tipo"), 
-                new Teclado("Apple", 101), 
-                new procesador("MI", 3.4f));
-        System.out.println(compu2);
-        //cambiando el mouse a:  apple y tipo touch  forma 1
-        //compu2.setRaton(new Mouse("Apple", "Touch"));
-        //System.out.println(compu2);
-            
-        //forma 2
+        Computadora compu2 = new Computadora("Apple", "MacBook Pro",
+                new Monitor("Toshiba", 14.3f),
+                new Mouse("Acteck", "optico"),
+                new Teclado("Apple", 101),
+                new procesador("M1", 3.4f));
+       
+        System.out.println( compu2 );
+        // mouse  apple y tipo touch
+        //compu2.setRaton(new Mouse("apple", "Touch"));
         compu2.getRaton().setMarca("Apple");
         compu2.getRaton().setTipo("Touch");
-        System.out.println(compu2);
+        System.out.println( compu2 );
+       
+        System.out.println("---------------------------------------");
+        Alumno alu1=new Alumno();
+        alu1.setNombre("José");
+        System.out.println( alu1 );
+       
+        Alumno alu2 = new Alumno("1243243244", "ICO", "JOsé Perex", 19);
+        System.out.println( alu2 );
+       
+        alu1.setNumCuenta("2323232323");
+        alu1.setEdad(19);
+        System.out.println( alu1 );
         
-        System.out.println("----------------------------------");
-        Alumno alu1 = new Alumno();
-        alu1.setNombre("Jose");//herencia del atrubito nombre de la clase persona 
-        System.out.println(alu1);
+        System.out.println("-----Composicion y herencia-------");
+        Servidor server = new Servidor();
+        System.out.println(server);
+        server.setNumeroTrajetasRed(2);
+        System.out.println(server);
+        server.setMarca("HP");
+        System.out.println(server);
+        server.setRaton(new Mouse("LG", "Optico"));
+        System.out.println(server);
+        server.getRaton().setMarca("Logitech");
+        System.out.println(server);
         
-        Alumno alu2 = new Alumno("23789765241","ICO","Jose Perez", 19);
-        System.out.println(alu2);
-        
+        System.out.println("-------ejemplo de polimorfismo------");
+        Perro dog = new Perro("Bull dog", "5 estrellas", 4);
+        Animal animal1 = new Animal(4);
+        dog.emitirSonido();
+        animal1.emitirSonido();
     }
     
 }

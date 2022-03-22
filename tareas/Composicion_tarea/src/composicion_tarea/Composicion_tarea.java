@@ -34,7 +34,7 @@ public class Composicion_tarea {
         System.out.println("------------------------------");
         
         Pelicula peli = new Pelicula("Red", "Comedia infantil", 100,
-                                    new Director("Domee Shi", "Comedia infantil"),
+                                    new Director("Domee Shi", 23),
                                     new Productora("Pixar Animation Studios", "Comedia"),
                                     new Actor("Laura Bailey","Abby"));
         peli.reproducir(100);

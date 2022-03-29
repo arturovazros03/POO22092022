@@ -43,7 +43,8 @@ public class Persona {
     
     //metodo dormir de la clase persona
     public void dormir(){
-        System.out.println(this.nombre + "esta durmiendo");
+        System.out.println(this.nombre + " esta durmiendo");
     }
+    
    
 }

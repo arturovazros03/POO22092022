@@ -18,6 +18,6 @@ public class PruebaPolimorfismo {
         al1.setNombre("José");
         al1.dormir();
         al1.dormir(4);
-                
+         
     }
 }

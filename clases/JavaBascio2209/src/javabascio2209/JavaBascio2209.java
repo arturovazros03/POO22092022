@@ -4,6 +4,7 @@
  */
 package javabascio2209;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -176,7 +177,68 @@ public class JavaBascio2209 {
         for (Alumno alumno : lista) {
             System.out.println(alumno.evaluarDesempenio());
         }
-                
+        
+        ArrayList<Alumno> grupo2209 = new ArrayList<Alumno>();
+        grupo2209.add( new Alumno("999999", 2, 9.0f));
+        grupo2209.add( new Alumno("888888", 2, 8.0f));
+        grupo2209.add( new Alumno("777777", 2, 7.0f));
+        grupo2209.add( new Alumno("666666", 2, 6.0f));
+        grupo2209.add( new Alumno("555555", 2, 5.0f));
+        
+        for (Alumno alumno : grupo2209) {
+            System.out.println(alumno);
+        }
+        
+        /*va a agregar este elemento a la lsita 
+        en la posicion que deseamos y simplemento el elemento
+        que esta en esa posicion lo recorre y todos loe elementos
+        de la lista pasara lo mismo*/
+        grupo2209.add(2, new Alumno("811111", 2, 9.9f));
+        
+        for (Alumno alumno : grupo2209) {
+            System.out.println(alumno);
+        }
+        
+        System.out.println("-----------------------------------------");
+        //sacando elemento con el metodo get();
+        
+        Alumno tmp = grupo2209.get(1); //NC = 88888
+        System.out.println("Alumno en index = 1: " + tmp);
+        
+        Alumno pos = grupo2209.get(3); //NC = 77777
+        System.out.println("Alumno en index = 1: " + pos);
+           
+        System.out.println("-------------------------------------------");
+        
+        /*borrando cierto elemento por remove (index)*/
+        Alumno tmp2= grupo2209.remove(3);
+        System.out.println("Elemnto sacado: " + tmp2);
+        
+        for (Alumno alumno : grupo2209) {
+            System.out.println(alumno);
+        }
+        
+        System.out.println("-----------------------------------------");
+        System.out.println("Remplazar el 1-esimo elemento");
+        
+        Alumno tmp3 = grupo2209.set(0, new Alumno("4444444", 4, 4.0f));
+        System.out.println("El sacado es : " + tmp3);
+        
+        for (Alumno alumno : grupo2209) {
+            System.out.println(alumno);
+        }
+        //excepciones 
+        
+        try {
+            System.out.println("Excepciones");
+            System.out.println(grupo2209.get(2));
+        } catch (Exception e) {
+            System.out.println("Error..revisa los indices");
+        }
+        
+        System.out.println("Fin del programa");
+        
+        
     }
     
 }

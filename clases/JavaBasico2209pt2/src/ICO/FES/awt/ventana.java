@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ico.fes.awt;
+
+package ICO.FES.awt;
+
 
 import java.awt.Button;
 import java.awt.FlowLayout;
@@ -12,18 +10,16 @@ import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-/**
- *
- * @author luisyuyots
- */
+
 
 //estamos creando una clase para generar una ventana
-public class ventana extends Frame {
+public class ventana extends Frame implements MouseListener{
     private String titulo;
     private Button boton1;
     private FlowLayout layout;
     private Label etiqueta;
     private TextField cuadroTexto;
+   
 
     public ventana() throws HeadlessException {
     }
@@ -31,9 +27,9 @@ public class ventana extends Frame {
     public ventana(String titulo) throws HeadlessException {
         super(titulo);
         this.setSize(350, 220);//para definir el tamaño de la venta alto x ancho
-       layout = new FlowLayout(FlowLayout.LEFT);
+        layout = new FlowLayout(FlowLayout.LEFT);//alieacion 
         this.setLayout(layout);
-        boton1 = new Button("Presioname"); //generando un nuevo boton a la ventana
+        boton1 = new Button("Presioname");
         cuadroTexto = new TextField(15);
         etiqueta = new Label("Texto inicial");
         
@@ -42,8 +38,6 @@ public class ventana extends Frame {
         this.add(etiqueta);
         
         this.boton1.addMouseListener(this);
-        
-        
         this.setVisible(true);//para hacer visible la ventana
     }
 
@@ -59,10 +53,13 @@ public class ventana extends Frame {
     public String toString() {
         return "ventana{" + "titulo=" + titulo + '}';
     }
-    
+
     @Override
     public void mouseClicked(MouseEvent e) {
-         etiqueta.setText("Hola " + cuadroTexto.getText());
+       
+        
+        //donde escribimos algo, imprimira el hola + nombre o cosa
+        etiqueta.setText("Hola " + cuadroTexto.getText());
     }
 
     @Override
@@ -82,7 +79,8 @@ public class ventana extends Frame {
 
     @Override
     public void mouseExited(MouseEvent e) {
-       
+        
     }
+    
     
 }

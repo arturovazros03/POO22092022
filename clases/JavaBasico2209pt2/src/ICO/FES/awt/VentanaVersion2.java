@@ -2,11 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ico.fes.awt;
+package ICO.FES.awt;
 
 import java.awt.Button;
 import java.awt.FlowLayout;
-import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.Label;
 import java.awt.TextField;
@@ -21,8 +20,7 @@ import java.awt.event.WindowEvent;
  *
  * @author luisyuyots
  */
-public class VentanaVersion2 extends Frame{
-    
+public class VentanaVersion2 {
     private TextField cuadroTexto;
     private Button boton1;
     private Label etiqueta;
@@ -74,9 +72,39 @@ public class VentanaVersion2 extends Frame{
         });
         
         this.setVisible(true);
-        
-        
-        
     }
+
+    private void setTitle(String ventana_con_eventos_v2) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setSize(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setLayout(FlowLayout layout) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void add(TextField cuadroTexto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void add(Button boton1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void add(Label etiqueta) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void addWindowListener(WindowAdapter windowAdapter) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     
 }

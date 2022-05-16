@@ -28,7 +28,7 @@ public class VentanaSwing extends JFrame {
     private JLabel resultado;
 
     public VentanaSwing() throws HeadlessException {
-        setTitle("Convresion de °C a °F");//estableciendo titulo
+        setTitle("Conversion de °C a °F");//estableciendo titulo
         setSize(400, 300);//dimensiones de la aplicacion
         setLayout(new FlowLayout(FlowLayout.CENTER));
         cuadro = new JTextField(5);
@@ -37,26 +37,30 @@ public class VentanaSwing extends JFrame {
         ImageIcon icono = new ImageIcon( System.getProperty("user.dir")  + "/src/ico/fes/swing/carrito.png");
         
         boton = new JButton(icono);
-        //cambia de color
-        boton.setBackground(Color.GREEN);
+        boton.setBackground(Color.GREEN);//cambia de color
         boton.setOpaque(true);
         boton.setToolTipText("Clic para convertir °F");//cuando selecionas el boton, sale un mensaje 
+        
         resultado = new JLabel("°F");
+        
+        //empaquetando elementos a la interfaz grafica por swing
         this.getContentPane().add(cuadro);
         this.getContentPane().add(boton);
         this.getContentPane().add(resultado);
         this.validate();
         this.setVisible(true);
         
+        //evento para cerrar ventana
         this.addWindowListener( new WindowAdapter() {
             //windowClosing ctrl + space para que salga en las opciones
             @Override
-            public void windowClosing(WindowEvent e) {
+            public void windowClosing(WindowEvent e) {//funcion para cerrar ventana
                 System.exit(0);
             }
             
         });
         
+        //evento para la conversion de grados
         this.boton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

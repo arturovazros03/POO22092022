@@ -5,6 +5,7 @@
 package ICO.FES.cifrado;
 
 
+
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.HeadlessException;
@@ -66,13 +67,10 @@ public class VentanaCesar extends JFrame{
             public void mouseClicked(MouseEvent e) {
                
                 try {
-                     
                     cifrar();
-                    
                 } catch (Exception ex) {
                     System.out.println(e.toString());
-                    JOptionPane.showMessageDialog(null, "No introducir numeros", "Error de captura", JOptionPane.ERROR_MESSAGE);
-                    
+                    JOptionPane.showMessageDialog(null, "Error de captura", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             
             }
@@ -100,6 +98,7 @@ public class VentanaCesar extends JFrame{
         
         String texto = codigo(letras,mensaje);
         
+        
         cifrado.setText(texto);
         
     }
@@ -107,11 +106,10 @@ public class VentanaCesar extends JFrame{
     private String codigo(String letras, String texto){
         String textoCodificado = "";
         int desplazamiento;
-        desplazamiento = Integer.parseInt(cuadroTexto.getText());
+        desplazamiento = Integer.parseInt(posicion.getText());
         texto = texto.toUpperCase();
         
         char caracter;
-      
         for(int i = 0; i<texto.length();i++){
             caracter = texto.charAt(i);
             
@@ -126,5 +124,6 @@ public class VentanaCesar extends JFrame{
         
         return textoCodificado;
     }
+    
     
 }

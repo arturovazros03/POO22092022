@@ -4,14 +4,18 @@
  */
 package ICO.FES.cifrado;
 
+import ICO.FES.algoritmo.Cesar;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.HeadlessException;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -28,7 +32,7 @@ public class VentanaCesar extends JFrame{
     public VentanaCesar() throws HeadlessException {
         //definiendo titulo de la ventana emergente
         setTitle("Cifrado Cesar");
-        setSize(400, 200);//Dimensiones de la ventana
+        setSize(800, 200);//Dimensiones de la ventana
         setLayout(new FlowLayout(FlowLayout.CENTER));
         cuadroTexto = new JTextField(10);
         
@@ -50,6 +54,25 @@ public class VentanaCesar extends JFrame{
             @Override
             public void windowClosing(WindowEvent e) {
                 System.exit(0);//cerrando ventana
+            }
+        });
+        
+        this.boton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                
+                String cifra = "";
+                
+                try {
+                    Cesar cs = new Cesar();
+                    cifrado.setText(cifra);
+                    
+                } catch (Exception ex) {
+                    System.out.println(e.toString());
+                    JOptionPane.showMessageDialog(null, "No introducir numeros", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                    
+                }
+            
             }
             
         });

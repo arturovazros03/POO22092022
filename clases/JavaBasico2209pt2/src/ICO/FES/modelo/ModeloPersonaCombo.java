@@ -17,12 +17,12 @@ public class ModeloPersonaCombo implements ComboBoxModel<Persona>{
     
     //atributos
     private ArrayList<Persona> datos;
-    private String selected;
+    private Persona selected;//para que nos regrese la informacion, vamos a declarar a la variable como a la clase persona
 
     public ModeloPersonaCombo() {
     }
 
-    public ModeloPersonaCombo(ArrayList datos, String selected) {
+    public ModeloPersonaCombo(ArrayList datos, Persona selected) {
         this.datos = datos;
         this.selected = selected;
     }
@@ -37,7 +37,7 @@ public class ModeloPersonaCombo implements ComboBoxModel<Persona>{
 
     @Override
     public void setSelectedItem(Object o) {
-        this.selected = (String)o;
+        this.selected = (Persona)o;
     }
 
     @Override

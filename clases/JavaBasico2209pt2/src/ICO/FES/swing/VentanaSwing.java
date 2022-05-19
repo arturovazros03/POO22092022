@@ -9,6 +9,7 @@ import ICO.FES.modelo.ModeloPersonaCombo;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.HeadlessException;
+import java.awt.event.ItemEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -20,6 +21,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -31,6 +33,9 @@ public class VentanaSwing extends JFrame {
     private JButton boton;
     private JLabel resultado;
     private JComboBox<Persona> lista; 
+    private JTextArea texto;
+    
+    
 //generando combobox, debemos importar a la clase deseada, en este caso es la clase persona
     private ModeloPersonaCombo modelo;
 
@@ -49,6 +54,7 @@ public class VentanaSwing extends JFrame {
         boton.setToolTipText("Clic para convertir °F");//cuando selecionas el boton, sale un mensaje 
         resultado = new JLabel("°F");
         lista = new JComboBox();//generando atributo a la interfaz
+        texto = new JTextArea(5, 20);
         
         //agregando informacion al comboBox, esto se agrega al modelo
         /*lista.addItem("ingenieria");
@@ -66,6 +72,8 @@ public class VentanaSwing extends JFrame {
         this.getContentPane().add(boton);
         this.getContentPane().add(resultado);
         this.getContentPane().add(lista);//agregando elemento combobox
+        this.getContentPane().add(texto);
+        
         this.validate();
         this.setVisible(true);
         
@@ -75,6 +83,18 @@ public class VentanaSwing extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) {//funcion para cerrar ventana
                 System.exit(0);
+            }
+            
+        });
+        
+        /*como item no tiene un adapter, tuvimos que generar una 
+        clase abstracta para hacer el adapter
+        */
+        this.lista.addItemListener(new ItemAdapter() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                System.out.println("evento " + e.getItem());
+                texto.setText(e.getItem() + "\n");
             }
             
         });

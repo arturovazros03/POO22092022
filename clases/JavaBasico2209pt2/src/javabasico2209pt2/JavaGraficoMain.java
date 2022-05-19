@@ -4,8 +4,8 @@
  */
 package javabasico2209pt2;
 
-import ICO.FES.awt.VentanaVersion2;
-import ICO.FES.awt.ventana;
+//import ICO.FES.awt.VentanaVersion2;
+//import ICO.FES.awt.ventana;
 import ICO.FES.swing.VentanaSwing;
 
 /**
@@ -22,5 +22,6 @@ public class JavaGraficoMain {
         VentanaSwing vs = new VentanaSwing();
         
         System.out.println( System.getProperty("user.dir"));
+        
     }
 }

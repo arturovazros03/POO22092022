@@ -4,6 +4,8 @@
  */
 package ICO.FES.swing;
 
+import ICO.FES.herencia.Persona;
+import ICO.FES.modelo.ModeloPersonaCombo;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.HeadlessException;
@@ -11,8 +13,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -26,6 +30,9 @@ public class VentanaSwing extends JFrame {
     private JTextField cuadro;
     private JButton boton;
     private JLabel resultado;
+    private JComboBox<Persona> lista; 
+//generando combobox, debemos importar a la clase deseada, en este caso es la clase persona
+    private ModeloPersonaCombo modelo;
 
     public VentanaSwing() throws HeadlessException {
         setTitle("Conversion de °C a °F");//estableciendo titulo
@@ -40,13 +47,24 @@ public class VentanaSwing extends JFrame {
         boton.setBackground(Color.GREEN);//cambia de color
         boton.setOpaque(true);
         boton.setToolTipText("Clic para convertir °F");//cuando selecionas el boton, sale un mensaje 
-        
         resultado = new JLabel("°F");
+        lista = new JComboBox();//generando atributo a la interfaz
+        
+        //agregando informacion al comboBox, esto se agrega al modelo
+        /*lista.addItem("ingenieria");
+        lista.addItem("derecho");
+        lista.addItem("periodismo");
+        lista.addItem("arquitectura");*/
+        
+        modelo = new ModeloPersonaCombo();
+        modelo.consultarBaseDatos();//llamando al metodo de la clase ModeloPersona
+        lista.setModel(modelo);//metemos los datos de modelo a la lista
         
         //empaquetando elementos a la interfaz grafica por swing
         this.getContentPane().add(cuadro);
         this.getContentPane().add(boton);
         this.getContentPane().add(resultado);
+        this.getContentPane().add(lista);//agregando elemento combobox
         this.validate();
         this.setVisible(true);
         

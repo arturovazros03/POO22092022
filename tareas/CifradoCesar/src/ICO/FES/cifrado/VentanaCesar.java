@@ -100,7 +100,7 @@ public class VentanaCesar extends JFrame{
         
         
         cifrado.setText(texto);
-        
+       
     }
     
     private String codigo(String letras, String texto){

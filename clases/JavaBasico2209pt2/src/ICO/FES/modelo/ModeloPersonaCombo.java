@@ -72,8 +72,8 @@ public class ModeloPersonaCombo implements ComboBoxModel<Persona>{
         //conectarian a bd
         //consulta bd
         datos.add(new Persona("Jose",19));
-        datos.add(new Persona("Maria",19));
-        datos.add(new Persona("Jesus",19));
-        datos.add(new Persona("Diana",19));
+        datos.add(new Persona("Maria",20));
+        datos.add(new Persona("Jesus",78));
+        datos.add(new Persona("Diana",23));
     }
 }

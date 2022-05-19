@@ -56,6 +56,7 @@ public class VentanaSwing extends JFrame {
         lista.addItem("periodismo");
         lista.addItem("arquitectura");*/
         
+        //ingresando elementos de la clase ModeloPersonaCombo a la interfaz grafica
         modelo = new ModeloPersonaCombo();
         modelo.consultarBaseDatos();//llamando al metodo de la clase ModeloPersona
         lista.setModel(modelo);//metemos los datos de modelo a la lista
